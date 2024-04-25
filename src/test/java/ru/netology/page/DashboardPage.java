@@ -10,7 +10,7 @@ import static com.codeborne.selenide.TypeOptions.text;
 public class DashboardPage {
     private final SelenideElement heading = $("[data-test-id=dashboard]");
     public DashboardPage() {
-        heading.shouldHave(Condition.text("Личный кабинет")).shouldBe(visible);
+        heading.shouldHave(Condition.text("  Личный кабинет")).shouldBe(visible);
     }
 
 }

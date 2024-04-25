@@ -14,13 +14,13 @@ public class BankVerificationTest {
     void tearDown(){
         cleanAuthCodes();
     }
-    @AfterAll
-    static void tearDawnAll(){
-        cleanDatabase();
-    }
+//     @AfterAll
+//    static void tearDawnAll(){
+//        cleanDatabase();
+//    }
     @BeforeEach
     void setUp(){
-        var loginPage = Selenide.open("http://localhost:9999", LoginPage.class);
+        loginPage = Selenide.open("http://localhost:9999", LoginPage.class);
     }
     @Test
     @DisplayName("Should test successfully login and password from Database")
@@ -41,6 +41,7 @@ public class BankVerificationTest {
         verificationPage.validVerify(verificationCode.getCode());
         verificationPage.setErrorNotification("Ошибка! \nНеверно указан код! Попробуйте ещё раз.");
     }
+    @Test
     @DisplayName("Should test with error notification if user is not exist in Database")
     void shouldTestWithErrorNotificationIfUserIsNotExistInDatabase() {
         var authInfo = DataHelper.generateRandomUser();
