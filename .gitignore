@@ -1,3 +1,9 @@
+.gredle/wrapper
+.gredle/wrapper/
+.gitignore
+gredlew
+*.bat
+settings.gradle
 Thumbs.db*
 .DS_Store
 HELP.md
