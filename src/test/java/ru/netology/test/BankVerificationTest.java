@@ -14,10 +14,10 @@ public class BankVerificationTest {
     void tearDown(){
         cleanAuthCodes();
     }
-//     @AfterAll
-//    static void tearDawnAll(){
-//        cleanDatabase();
-//    }
+     @AfterAll
+    static void tearDawnAll(){
+        cleanDatabase();
+    }
     @BeforeEach
     void setUp(){
         loginPage = Selenide.open("http://localhost:9999", LoginPage.class);
