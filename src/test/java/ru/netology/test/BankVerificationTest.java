@@ -29,7 +29,7 @@ public class BankVerificationTest {
         var verificationPage = loginPage.validLogin(authInfo);
         verificationPage.visibleVerificationPage();
         var verificationCode = SQLHelper.getVerificationCode();
-        verificationPage.validVerify(verificationCode.getCode());
+        verificationPage.verify(verificationCode.getCode());
     }
     @Test
     @DisplayName("Should test with error notification if user has random verification code")
@@ -38,7 +38,7 @@ public class BankVerificationTest {
         var verificationPage = loginPage.validLogin(authInfo);
         verificationPage.visibleVerificationPage();
         var verificationCode = DataHelper.generateRandomVerificationCode();
-        verificationPage.validVerify(verificationCode.getCode());
+        verificationPage.verify(verificationCode.getCode());
         verificationPage.setErrorNotification("Ошибка! \nНеверно указан код! Попробуйте ещё раз.");
     }
     @Test
